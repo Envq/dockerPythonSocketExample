@@ -75,7 +75,7 @@ docker run -it --rm -p 2000:2000/udp --name server myimage python3 /workspace/se
 
 Execute Client UDP on Host1
 ~~~
-python3 serverUDP.py IP_HOST2 2000
+python3 clientUDP.py IP_HOST2 2000
 ~~~
 
 
@@ -104,3 +104,14 @@ Execute Client UDP in Container client on Host1
 docker run -it --rm --name client myimage python3 /workspace/clientUDP.py IP_HOST2 2000
 ~~~
 Note: You must create bridge network for use the hostname server.
+
+---
+## EXTRA NOTES:
+If you use vscode dev inside Container use:
+~~~
+"runArgs": [ "...other...", "--name", "APP_NAME", "-p", "2000:2000/udp"],
+~~~
+else if you use tcp port:
+~~~
+"forwardPorts": [2000]
+~~~
