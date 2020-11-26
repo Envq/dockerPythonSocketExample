@@ -36,3 +36,19 @@ Execute Client UDP on host
 python3 clientUDP.py localhost 2002
 ~~~
 Note: You can't do "Host server and Container client"
+
+---
+## Host1 client and Host2 server
+Get repository on both hosts (they must be on same network). Get ipv4 of server host and execute:
+~~~
+python3 serverUDP.py HOST_IP PORT
+~~~
+Then execute the client on secondo host:
+~~~
+python3 clientUDP.py HOST_IP PORT
+~~~
+Note: HOST_IP is the ipv4 of server host, and PORT is the port selected for communication.
+
+
+---
+## Container/Host1 client and Container/Host2 server
